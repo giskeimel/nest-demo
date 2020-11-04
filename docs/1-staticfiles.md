@@ -26,3 +26,19 @@ Ahora intentar levantarlo:
 `npm run start:dev`
 
 y entrar a [http://localhost:3000](http://localhost:3000)
+
+`npm install --save @nestjs/serve-static`
+
+En `app.controller.ts` Cambiar la ruta del controlador: `@Controller('api')`.
+
+En `app.module.ts` agregar 
+```js
+ [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'client'),
+    }),
+  ],
+```
+
+Crear la carpeta para archivos estaticos: `client`.
+
